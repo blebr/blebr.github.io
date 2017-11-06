@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>Bootstrap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+</head>
+<body style="background-image: url(img/background.png)">
+
+	<div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none" id="mySidebar">
+		<button class="w3-bar-item w3-button w3-large"onclick="w3_close()">Закрыть &times;</button>
+		<a href="index.html" class="w3-bar-item w3-button">Главная</a>
+		<a href="games.html" class="w3-bar-item w3-button">Игры</a>
+		<a href="programs.html" class="w3-bar-item w3-button">Программы</a>
+		<a href="decor.html" class="w3-bar-item w3-button">Оформление</a>
+	</div>
+
+	<div>
+		<button class="w3-button w3-xxlarge" onclick="w3_open()">&#9776;</button>
+		<div class="w3-container">
+			<h2>Поиск по названию</h2>
+
+			<input class="w3-input w3-border w3-padding" type="text" placeholder="Пример: книги" id="myInput" onkeyup="myFunction()">
+			<ul class="w3-ul w3-margin-top" id="myUL">
+				<li>Книги</li>
+				<li>Телефонная часть</li>
+				<li>Системные</li>
+				<li>Интернет и сеть</li>
+				<li>Навигация</li>
+				<li>Офисные</li>
+				<li>Мельтимедиа</li>
+				<li>Другие программы</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		function w3_open() {
+		document.getElementById("mySidebar").style.display = "block";
+	}
+		function w3_close() {
+		document.getElementById("mySidebar").style.display = "none";
+	}
+	</script>
+
+<script>
+function myFunction() {
+var input, filter, ul, li, a, i;
+input = document.getElementById("myInput");
+filter = input.value.toUpperCase();
+ul = document.getElementById("myUL");
+li = ul.getElementsByTagName("li");
+for (i = 0; i < li.length; i++) {
+if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+li[i].style.display = "";
+} else {
+li[i].style.display = "none";
+}
+}
+}
+</script>
+
+</body>
+</html>
